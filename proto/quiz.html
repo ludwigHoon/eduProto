@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
 
     <meta charset="utf-8">
@@ -12,7 +11,7 @@
     <script src="../lib/score.js"></script>
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <!--<link href="style.css" rel="stylesheet">
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -21,19 +20,8 @@
     <link href="css/one-page-wonder.min.css" rel="stylesheet">
     <script>
         let score=new Score();
-        $( document ).ready(function() {
-            $('#next').click(function(){
-                let current = Number($('#cont').attr('src').split('/').pop())+1;
-                if(current>2){window.location.href = "quiz1.html";}
-                $('#cont').attr('src', '../media/'+current);
-                });
-            $('#prev').click(function(){
-                let current = Number($('#cont').attr('src').split('/').pop())-1;
-                if (current<=0){current=1;}
-                $('#cont').attr('src', '../media/'+current);
-                });
-        });
     </script>
+    <script src="script.js"></script>
   </head>
 
   <body>
@@ -64,29 +52,39 @@
       </div>
     </nav>
 
-    <!--Only change here-->
-    <section>
-        <div class="container">
-            <img id=cont src= ../media/1>
-        </div>
-        <div class="container">
-            <a id=prev class="btn btn-primary rounded-pill">Back</a>
-            <a id=next class="btn btn-primary rounded-pill">Next</a>
-        </div>
-    </section>
-    
-    <!-- Footer -->
-    <footer class="py-5 bg-black">
-      <div class="container">
-        <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+    <!--Quiz section-->
+    <div class="container">
+    <h1 class="score"></h1>
+    <div class="header">
+      <h1 class="questionNumber"></h1>
+      <h2 class="question"></h2>
+    </div>
+    <form name="form1">
+      <div class="answers">
+        <input type="radio" name="radioChoice"> <label></label><br>
+        <input type="radio" name="radioChoice"> <label></label><br>
+        <input type="radio" name="radioChoice"> <label></label><br>
+        <input type="radio" name="radioChoice"> <label></label><br>
+        <div class="button"><button type="button" onclick="next()">Next</button></div>
+        <div class="button"><button type="button" onclick="back()">Back</button></div>
       </div>
-      <!-- /.container -->
-    </footer>
+    </form>
+  </div>x
 
-    <!-- Bootstrap core JavaScript -->
+
+
+        <!-- Footer -->
+        <footer class="py-5 bg-black">
+          <div class="container">
+            <p class="m-0 text-center text-white small">Copyright &copy; Your Website 2018</p>
+          </div>
+          <!-- /.container -->
+        </footer>
     
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  </body>
+        <!-- Bootstrap core JavaScript -->
+        
+        <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    </body>
 
 </html>

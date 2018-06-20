@@ -24,7 +24,7 @@
         $( document ).ready(function() {
             $('#next').click(function(){
                 let current = Number($('#cont').attr('src').split('/').pop())+1;
-                if(current>2){window.location.href = "quiz1.html";}
+                if(current>2){window.location.href = "quiz.html";}
                 $('#cont').attr('src', '../media/'+current);
                 });
             $('#prev').click(function(){
